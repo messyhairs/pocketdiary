@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { DairyapiService } from '../../services/dairyapi.service';
 
 @Component({
   selector: 'app-opendiary',
@@ -7,7 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpendiaryComponent implements OnInit {
 
-  constructor() { }
+  angForm: FormGroup;
+  constructor(private fb: FormBuilder, private storyser: DairyapiService) {
+    this.createForm();
+  }
+
+  createForm(): void {
+    this.angForm = this.fb.group({
+      storytitle: ['', Validators.required],
+      place: ['', Validators.required],
+      explainstory: ['', Validators.required]
+    });
+  }
+  addBusiness(storytitle, palce, explainstory) {
+    this.storyser.addBusiness(storytitle, palce, explainstory);
+  }
 
   ngOnInit(): void {
   }

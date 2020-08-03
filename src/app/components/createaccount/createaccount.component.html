@@ -1,1 +1,10 @@
-<p>createaccount works!</p>
+<div class="cardlayout">
+    <form [formGroup]="userforms" novalidate>
+        <h1 class="pb-2">Create Account</h1>
+        <input type="email" class="user" formControlName="email" placeholder="useremail" />
+        <input type="text" class="user" formControlName="name" placeholder="username" />
+        <input type="number" class="user" formControlName="mobilenumber" placeholder="mobilenumber" />
+        <input type="password" formControlName="password" class="pass" placeholder="Password" />
+        <button class="login" (click)="createaccount()">create account</button>
+    </form>
+</div>

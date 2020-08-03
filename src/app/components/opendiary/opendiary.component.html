@@ -1,1 +1,42 @@
-<p>opendiary works!</p>
+<!-- <div class="container"> -->
+    <div class="cardlayout mx-auto d-block">
+        <form [formGroup]="angForm" novalidate class="w-50">
+            <div class="form-group">
+                <label class="col-md-8">story title</label>
+                <input type="text" placeholder="me and rithika" class="form-control w-50" formControlName="storytitle" #storytitle />
+            </div>
+            <div *ngIf="angForm.controls['storytitle'].invalid && (angForm.controls['storytitle'].dirty || angForm.controls['storytitle'].touched)"
+                class="alert alert-danger w-50">
+                <div *ngIf="angForm.controls['storytitle'].errors.required">
+                    Title is required.
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-8">Place </label>
+                <input type="text" placeholder="Tidal park tea shop" class="form-control w-50" formControlName="place" #place />
+            </div>
+            <div *ngIf="angForm.controls['place'].invalid && (angForm.controls['place'].dirty || angForm.controls['place'].touched)"
+                class="alert alert-danger w-50">
+                <div *ngIf="angForm.controls['place'].errors.required">
+                    place is required.
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-8">Explain story </label>
+                <textarea placeholder="more fun and more......" class="form-control w-50" formControlName="explainstory" #explainstory></textarea>
+            </div>
+            <div *ngIf="angForm.controls['explainstory'].invalid && (angForm.controls['explainstory'].dirty || angForm.controls['explainstory'].touched)"
+                class="alert alert-danger w-50">
+                <div *ngIf="angForm.controls['explainstory'].errors.required">
+                    Story brief is required.
+                </div>
+            </div>
+            <div class="form-group">
+                <button (click)="addBusiness(storytitle.value, place.value, explainstory.value)"
+                    [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">
+                    Add story
+                </button>
+            </div>
+        </form>
+    </div>
+<!-- </div> -->

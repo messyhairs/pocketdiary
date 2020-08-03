@@ -1,0 +1,55 @@
+@media screen and (min-width: 768px) {
+    .cardlayout {
+        width: 300px;
+        height: auto;
+        box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+        border-radius: 20px;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        margin-top: 5%;
+    }
+
+    .w-50 {
+        width: 100% !important;
+    }
+
+    .card-body {
+        border: none;
+    }
+
+    .alert-danger {
+        background: none;
+        border: none;
+        color: crimson;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .cardlayout {
+        width: 300px;
+        height: auto;
+        /* box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44); */
+        border-radius: 20px;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        margin-top: 5%;
+    }
+
+    .w-50 {
+        width: 100% !important;
+    }
+
+    .card-body {
+        border: none;
+    }
+
+    .alert-danger {
+        background: none;
+        border: none;
+        color: crimson;
+    }
+}
