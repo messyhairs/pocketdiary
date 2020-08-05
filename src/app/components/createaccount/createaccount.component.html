@@ -1,10 +1,54 @@
-<div class="cardlayout">
-    <form [formGroup]="userforms" novalidate>
-        <h1 class="pb-2">Create Account</h1>
-        <input type="email" class="user" formControlName="email" placeholder="useremail" />
-        <input type="text" class="user" formControlName="name" placeholder="username" />
-        <input type="number" class="user" formControlName="mobilenumber" placeholder="mobilenumber" />
-        <input type="password" formControlName="password" class="pass" placeholder="Password" />
-        <button class="login" (click)="createaccount()">create account</button>
+<div class="cardlayout mx-auto d-block">
+    <h3 class="text-center">Create Account</h3>
+    <form [formGroup]="userforms" novalidate class="w-50">
+        <div class="form-group">
+            <label class="col-md-8">name</label>
+            <input type="text" placeholder="your name" class="form-control w-50" formControlName="name" #name />
+        </div>
+        <div *ngIf="userforms.controls['name'].invalid && (userforms.controls['name'].dirty || userforms.controls['name'].touched)"
+            class="alert alert-danger w-50">
+            <div *ngIf="userforms.controls['name'].errors.required">
+                name is required.
+            </div>
+        </div>
+        <!-- <div class="form-group">
+            <label class="col-md-8">Mobile Number</label>
+            <input type="number" placeholder="1234556789" class="form-control w-50" formControlName="mobilenumber"
+                #mobilenumber />
+        </div>
+        <div *ngIf="userforms.controls['mobilenumber'].invalid && (userforms.controls['mobilenumber'].dirty || userforms.controls['mobilenumber'].touched)"
+            class="alert alert-danger w-50">
+            <div *ngIf="userforms.controls['mobilenumber'].errors.required">
+                mobilenumber is required.
+            </div>
+        </div> -->
+        <div class="form-group">
+            <label class="col-md-8">Email Id</label>
+            <input type="email" placeholder="example@demo.com" class="form-control w-50" formControlName="email"
+                #email />
+        </div>
+        <div *ngIf="userforms.controls['email'].invalid && (userforms.controls['email'].dirty || userforms.controls['email'].touched)"
+            class="alert alert-danger w-50">
+            <div *ngIf="userforms.controls['email'].errors.required">
+                email is required.
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-8">Password</label>
+            <input type="password" placeholder="password" class="form-control w-50" formControlName="password"
+                #password>
+        </div>
+        <div *ngIf="userforms.controls['password'].invalid && (userforms.controls['password'].dirty || userforms.controls['password'].touched)"
+            class="alert alert-danger w-50">
+            <div *ngIf="userforms.controls['password'].errors.required">
+                password is required.
+            </div>
+        </div>
+        <div class="form-group">
+            <button (click)="createaccount()" [disabled]="userforms.pristine || userforms.invalid"
+                class="btn btn-primary">
+                Create Account
+            </button>
+        </div>
     </form>
 </div>

@@ -1,14 +1,7 @@
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
     .cardlayout {
-        width: 300px;
-        height: auto;
-        box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
-        border-radius: 20px;
-        padding-right: 20px;
-        padding-left: 20px;
-        padding-bottom: 20px;
-        padding-top: 20px;
-        margin-top: 5%;
+        width: 250px;
+        margin-top: 2rem;
     }
 
     .w-50 {
@@ -28,15 +21,8 @@
 
 @media screen and (max-width:768px) {
     .cardlayout {
-        width: 300px;
-        height: auto;
-        /* box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44); */
-        border-radius: 20px;
-        padding-right: 20px;
-        padding-left: 20px;
-        padding-bottom: 20px;
-        padding-top: 20px;
-        margin-top: 5%;
+        width: 250px;
+        margin-top: 2rem;
     }
 
     .w-50 {

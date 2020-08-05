@@ -17,6 +17,9 @@ const routes: Routes = [
   },
   {
     path: 'createaccount', component: CreateaccountComponent
+  },
+  {
+    path: 'login', component: LoginComponent
   }
 ];
 
