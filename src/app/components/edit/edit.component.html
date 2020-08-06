@@ -1,0 +1,32 @@
+<form [formGroup]="angForm" novalidate>
+    <div class="form-group">
+        <label class="col-md-4">Title</label>
+        <input type="text" class="form-control" formControlName="storytitle" #storytitle
+            [(ngModel)]="business.storytitle" />
+    </div>
+    <div *ngIf="angForm.controls['storytitle'].invalid && (angForm.controls['storytitle'].dirty || angForm.controls['storytitle'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="angForm.controls['storytitle'].errors.required">
+            Title is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4">place </label>
+        <input type="text" class="form-control" formControlName="place" #place [(ngModel)]="business.place" />
+    </div>
+    <div *ngIf="angForm.controls['place'].invalid && (angForm.controls['place'].dirty || angForm.controls['place'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="angForm.controls['place'].errors.required">
+            place is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4">Story explain </label>
+        <textarea class="form-control" formControlName="explainstory" #explainstory
+            [(ngModel)]="business.explainstory"></textarea>
+    </div>
+    <div class="form-group">
+        <button (click)="updateBusiness(storytitle.value, place.value, explainstory.value)" [disabled]="angForm.invalid"
+            class="btn btn-primary">Update Business</button>
+    </div>
+</form>

@@ -4,13 +4,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateaccountComponent } from './components/createaccount/createaccount.component';
 import { LoginComponent } from './components/login/login.component';
 import { NoteitComponent } from './components/noteit/noteit.component';
 import { OpendiaryComponent } from './components/opendiary/opendiary.component';
 import { ChoosebycategoryComponent } from './components/choosebycategory/choosebycategory.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { environment } from '../environments/environment';
+import { AuthGuard } from './services/auth.guard';
+import { FullstoryComponent } from './components/fullstory/fullstory.component';
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -19,16 +24,20 @@ import { environment } from '../environments/environment';
     LoginComponent,
     NoteitComponent,
     OpendiaryComponent,
-    ChoosebycategoryComponent
+    ChoosebycategoryComponent,
+    FullstoryComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

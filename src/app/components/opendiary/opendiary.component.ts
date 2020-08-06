@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DairyapiService } from '../../services/dairyapi.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-opendiary',
@@ -14,7 +15,7 @@ export class OpendiaryComponent implements OnInit {
   arraydata: any = [];
   useremail: any;
   usrname: any;
-  constructor(private fb: FormBuilder, private storyser: DairyapiService) {
+  constructor(private fb: FormBuilder, private router: Router, private storyser: DairyapiService) {
     this.createForm();
   }
 
@@ -30,16 +31,19 @@ export class OpendiaryComponent implements OnInit {
         storytitle: ['', Validators.required],
         place: ['', Validators.required],
         explainstory: ['', Validators.required],
-        email: [this.useremail],
         name: [this.usrname],
+        email: [this.useremail],
       });
     });
 
     // }
 
   }
-  addBusiness(storytitle, place, explainstory, email, name) {
-    this.storyser.addBusiness(storytitle, place, explainstory, email, name);
+  addBusiness(storytitle, place, explainstory, name, email) {
+    this.storyser.addBusiness(storytitle, place, explainstory, name, email);
+    // this.router.navigate(['/creatediary']);
+    // location.href = '/creatediary';
+    this.angForm.reset();
   }
 
   ngOnInit(): void {
