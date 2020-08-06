@@ -23,12 +23,15 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.userdetails = localStorage.getItem('currentUser');
-    this.arraydata.push(JSON.parse(this.userdetails));
-    this.arraydata.forEach(element => {
-      // console.log(element.email);
-      this.useremail = element.email;
-    });
+    // if (this.userdetails) {
+      this.userdetails = localStorage.getItem('currentUser');
+      this.arraydata.push(JSON.parse(this.userdetails));
+      this.arraydata.forEach(element => {
+        // console.log(element.email);
+        this.useremail = element.email;
+      });
+    // }
+
     // this.userforms = this.formbuilder.group({
     //   gender: ['', Validators.required],
     //   dob: ['', Validators.required],
@@ -36,7 +39,7 @@ export class AppComponent {
     //   useremail: [this.useremail],
     //   status: [this.status]
     // });
-    console.log(this.useremail);
+    // console.log(this.useremail);
   }
   logout() {
     this.service.logout();

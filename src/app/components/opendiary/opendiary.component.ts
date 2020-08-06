@@ -10,19 +10,36 @@ import { DairyapiService } from '../../services/dairyapi.service';
 export class OpendiaryComponent implements OnInit {
 
   angForm: FormGroup;
+  userdetails: string;
+  arraydata: any = [];
+  useremail: any;
+  usrname: any;
   constructor(private fb: FormBuilder, private storyser: DairyapiService) {
     this.createForm();
   }
 
   createForm(): void {
-    this.angForm = this.fb.group({
-      storytitle: ['', Validators.required],
-      place: ['', Validators.required],
-      explainstory: ['', Validators.required]
+    // if (this.userdetails) {
+    this.userdetails = localStorage.getItem('currentUser');
+    this.arraydata.push(JSON.parse(this.userdetails));
+    this.arraydata.forEach(element => {
+      // console.log(element.email);
+      this.useremail = element.email;
+      this.usrname = element.name;
+      this.angForm = this.fb.group({
+        storytitle: ['', Validators.required],
+        place: ['', Validators.required],
+        explainstory: ['', Validators.required],
+        email: [this.useremail],
+        name: [this.usrname],
+      });
     });
+
+    // }
+
   }
-  addBusiness(storytitle, palce, explainstory) {
-    this.storyser.addBusiness(storytitle, palce, explainstory);
+  addBusiness(storytitle, place, explainstory, email, name) {
+    this.storyser.addBusiness(storytitle, place, explainstory, email, name);
   }
 
   ngOnInit(): void {

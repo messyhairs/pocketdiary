@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
 import Pocketuser from './pocketuser';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccapiService {
-  private BaseUrl = `http://localhost:4000/pocketuser`;
+  // private BaseUrl = `http://localhost:4000/pocketuser`;
+  private BaseUrl = 'https://pocketdairyapp.herokuapp.com/pocketuser';
 
   constructor(private http: HttpClient) { }
 
@@ -16,14 +17,23 @@ export class AccapiService {
   }
 
   login(userdetails: Pocketuser) {
-    return this.http.post<any>(this.BaseUrl + '/login', userdetails)
-      .map(user => {
+    // return this.http.post<any>(this.BaseUrl + '/login', userdetails)
+    //   .map(user => {
+    //     if (user) {
+    //       localStorage.setItem('currentUser', JSON.stringify(user));
+    //     }
+
+    //     return user;
+    //   });
+    return this.http.post<any>(this.BaseUrl + '/login', userdetails).pipe(
+      map(user => {
         if (user) {
           localStorage.setItem('currentUser', JSON.stringify(user));
         }
 
         return user;
-      });
+      })
+    );
   }
 
   logout() {

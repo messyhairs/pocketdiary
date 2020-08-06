@@ -6,16 +6,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DairyapiService {
 
-  uri = 'http://localhost:4000/pocket';
-  // uri = 'https://meanapplauncher.herokuapp.com/business';
+  // uri = 'http://localhost:4000/pocket';
+  // uri = 'https://meanapplauncher.herokuapp.com/poc';
+  private uri = 'https://pocketdairyapp.herokuapp.com/pocket';
+
 
   constructor(private http: HttpClient) { }
 
-  addBusiness(storytitle, palce, explainstory) {
+  addBusiness(storytitle, place, explainstory, name, email) {
     const obj = {
       storytitle: storytitle,
-      palce: palce,
-      explainstory: explainstory
+      place: place,
+      explainstory: explainstory,
+      name: name,
+      email: email
     };
     // console.log(obj);
     this.http.post(`${this.uri}/add`, obj)
@@ -32,11 +36,11 @@ export class DairyapiService {
       .http
       .get(`${this.uri}/edit/${id}`);
   }
-  updateBusiness(storytitle, palce, explainstory, id) {
+  updateBusiness(storytitle, place, explainstory, id) {
 
     const obj = {
       storytitle: storytitle,
-      palce: palce,
+      place: place,
       explainstory: explainstory
     };
     this
