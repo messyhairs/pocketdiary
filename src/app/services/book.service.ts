@@ -9,7 +9,8 @@ import { HttpHeaders, HttpErrorResponse, HttpClient } from '@angular/common/http
 
 export class BookService {
 
-  private baseURL = `http://localhost:4000/imageconcept`;
+  // private baseURL = `http://localhost:4000/books`;
+  private baseURL = 'https://poketapp.herokuapp.com/books';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
@@ -35,7 +36,7 @@ export class BookService {
     });
   }
 
-  // Error handling 
+  // Error handling
   errorMgmt(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
@@ -48,5 +49,14 @@ export class BookService {
     console.log(errorMessage);
     return throwError(errorMessage);
   }
-
+  readfullstory(id) {
+    return this
+      .http
+      .get(`${this.baseURL}/edit/${id}`);
+  }
+  deletebook(id) {
+    return this
+      .http
+      .get(`${this.baseURL}/delete/${id}`);
+  }
 }

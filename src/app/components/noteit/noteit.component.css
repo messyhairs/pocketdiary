@@ -78,6 +78,10 @@
     width: 60%;
 }
 
+.bookcontainer {
+    padding-bottom: 10rem;
+}
+
 @media screen and (max-width:768px) {
     .cardlayout {
         width: 270px;
@@ -159,5 +163,9 @@
 
     p.story-title {
         padding-top: 20px;
+    }
+
+    .bookcontainer {
+        padding-bottom: 10rem;
     }
 }

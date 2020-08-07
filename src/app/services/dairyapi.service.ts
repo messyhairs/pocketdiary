@@ -8,7 +8,7 @@ export class DairyapiService {
 
   // uri = 'http://localhost:4000/pocket';
   // uri = 'https://meanapplauncher.herokuapp.com/poc';
-  private uri = 'https://pocketdairyapp.herokuapp.com/pocket';
+  private uri = 'https://poketapp.herokuapp.com/pocket';
 
 
   constructor(private http: HttpClient) { }

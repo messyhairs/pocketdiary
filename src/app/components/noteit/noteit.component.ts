@@ -42,7 +42,7 @@ export class NoteitComponent implements OnInit {
     });
   }
   deletestories(id): void {
-    this.ds.deleteBusiness(id).subscribe(res => {
+    this.bookservice.deletebook(id).subscribe(res => {
       this.router.navigate(['/']);
 
     });

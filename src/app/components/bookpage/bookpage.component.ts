@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BookService } from '../../services/book.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { HttpEvent, HttpEventType } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -23,7 +24,8 @@ export class BookpageComponent implements OnInit {
   constructor(
     public fb: FormBuilder,
     public router: Router,
-    public fileUploadService: BookService
+    public fileUploadService: BookService,
+    private SpinnerService: NgxSpinnerService
   ) {
     // Reactive Form
     this.userdetails = localStorage.getItem('currentUser');
@@ -62,6 +64,7 @@ export class BookpageComponent implements OnInit {
   }
 
   submitForm() {
+    this.SpinnerService.show();
     this.fileUploadService.addUser(
       this.form.value.storytitle,
       this.form.value.place,
@@ -87,6 +90,7 @@ export class BookpageComponent implements OnInit {
         // this.router.navigate(['users-list']);
       }
     });
+    this.SpinnerService.hide();
   }
 
 }

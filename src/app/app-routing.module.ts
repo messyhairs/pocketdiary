@@ -32,7 +32,7 @@ const routes: Routes = [
     path: 'readstory/:id', component: FullstoryComponent, canActivate: [AuthGuard]
   },
   {
-    path: 'book', component: BookpageComponent
+    path: 'book', component: BookpageComponent, canActivate: [AuthGuard]
   }
 
 ];
