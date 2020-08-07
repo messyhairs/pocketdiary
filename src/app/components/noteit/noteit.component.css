@@ -1,40 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap');
-
 .cardlayout {
-    /* width: 300px; */
-    /* height: 200px; */
-    /* box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44); */
-    /* border-radius: 20px; */
+    width: 300px;
+    height: 400px;
+    -webkit-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+    -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+    box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+    border-radius: 20px;
     overflow-Y: scroll;
-    /* padding-bottom: 3rem; */
-    /* margin-top: 30%; */
+    padding-bottom: 3rem;
 }
 
 .wrapper {
     text-align: center;
     padding-top: 3rem;
-}
-
-.cardname {
-    font-family: 'Muli', sans-serif;
-    text-align: center;
-    font-size: 18px;
-    padding-top: 1rem;
-    font-weight: 600;
-}
-
-.carddetails {
-    font-family: 'Muli', sans-serif;
-    text-align: center;
-    font-size: 18px;
-}
-
-.morebout {
-    color: rgb(124, 110, 110);
-    font-family: 'Muli', sans-serif;
-    font-size: 20px;
-    padding: 10px;
-    text-align: justify;
 }
 
 .image--cover {
@@ -45,4 +22,142 @@
     object-fit: cover;
     /* object-position: center right; */
     cursor: pointer;
+}
+
+.cardname {
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+    font-size: 15px;
+}
+
+.carddetails {
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+    font-size: 18px;
+}
+
+.social {
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-pinterest {
+    background: #cb2027;
+    color: white;
+}
+
+.morebout {
+    color: rgb(124, 110, 110);
+    font-family: 'Muli', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    text-align: justify;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+@media screen and (max-width:768px) {
+    .cardlayout {
+        width: 270px;
+        height: 400px;
+        overflow-Y: scroll;
+        overflow-X: hidden;
+        box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+        border-radius: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3rem;
+    }
+
+
+    .image--cover {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        -webkit-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+        -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+        box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .cardname {
+        font-family: 'Muli', sans-serif;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .carddetails {
+        font-family: 'Muli', sans-serif;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .social {
+        text-align: center;
+        padding-top: 3rem;
+    }
+
+    .fa {
+        padding: 10px;
+        font-size: 20px;
+        width: 20px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        border-radius: 50%;
+    }
+
+    .fa-facebook {
+        background: #3B5998;
+        color: white;
+    }
+
+    .fa-twitter {
+        background: #55ACEE;
+        color: white;
+    }
+
+    .fa-pinterest {
+        background: #cb2027;
+        color: white;
+    }
+
+    .morebout {
+        color: rgb(124, 110, 110);
+        font-family: 'Muli', sans-serif;
+        font-size: 14px;
+        padding: 10px;
+        text-align: justify;
+    }
+
+    .w-60 {
+        width: 60%;
+    }
+
+    p.story-title {
+        padding-top: 20px;
+    }
 }

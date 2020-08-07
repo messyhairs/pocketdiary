@@ -16,6 +16,8 @@ import { environment } from '../environments/environment';
 import { AuthGuard } from './services/auth.guard';
 import { FullstoryComponent } from './components/fullstory/fullstory.component';
 import { EditComponent } from './components/edit/edit.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { BookpageComponent } from './components/bookpage/bookpage.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { EditComponent } from './components/edit/edit.component';
     OpendiaryComponent,
     ChoosebycategoryComponent,
     FullstoryComponent,
-    EditComponent
+    BookpageComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { EditComponent } from './components/edit/edit.component';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
+    LazyLoadImageModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [AuthGuard],

@@ -7,6 +7,7 @@ import { OpendiaryComponent } from './components/opendiary/opendiary.component';
 import { ChoosebycategoryComponent } from './components/choosebycategory/choosebycategory.component';
 import { FullstoryComponent } from './components/fullstory/fullstory.component';
 import { EditComponent } from './components/edit/edit.component';
+import { BookpageComponent } from './components/bookpage/bookpage.component';
 import { AuthGuard } from './services/auth.guard';
 const routes: Routes = [
   {
@@ -29,7 +30,11 @@ const routes: Routes = [
   },
   {
     path: 'readstory/:id', component: FullstoryComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: 'book', component: BookpageComponent
   }
+
 ];
 
 @NgModule({

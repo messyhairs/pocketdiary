@@ -1,5 +1,5 @@
 export default class Pocket {
-    storytitle: String;
-    place: String;
-    explainstory: String;
+    storytitle: string;
+    place: string;
+    explainstory: string;
 }

@@ -1,0 +1,34 @@
+<form [formGroup]="form" class="mx-auto d-block" (ngSubmit)="submitForm()">
+    <!-- Image Preview -->
+    <div class="form-group">
+        <div class="preview" *ngIf="preview && preview !== null">
+            <img [src]="preview" class="mx-auto w-75">
+        </div>
+    </div>
+
+    <!-- File Input -->
+    <div class="form-group">
+        <input type="file" (change)="uploadFile($event)">
+    </div>
+
+    <div class="form-group input-group-lg">
+        <input class="form-control" placeholder="story title" formControlName="storytitle">
+    </div>
+    <div class="form-group input-group-lg">
+        <input class="form-control" placeholder="place" formControlName="place">
+    </div>
+    <div class="form-group input-group-lg">
+        <textarea class="form-control" placeholder="explainstory" formControlName="explainstory"></textarea>
+    </div>
+    <div class="form-group input-group-lg">
+        <input type="email" class="form-control" placeholder="email" formControlName="email" #email hidden />
+    </div>
+    <div class="form-group input-group-lg">
+        <input type="text" class="form-control" placeholder="name" formControlName="name" #name hidden />
+    </div>
+
+    <!-- Submit -->
+    <div class="form-group">
+        <button class="btn btn-danger btn-block btn-lg">Create User</button>
+    </div>
+</form>
